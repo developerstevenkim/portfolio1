@@ -15624,11 +15624,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/dohunkim/Azure/Do4/Views/Projects_Languages/Details.cshtml",
-      "TargetPath": "Views\\Projects_Languages\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/dohunkim/Azure/Do4/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15719,11 +15714,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/dohunkim/Azure/Do4/Views/Projects_Languages/Delete.cshtml",
-      "TargetPath": "Views\\Projects_Languages\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/dohunkim/Azure/Do4/Views/Project_Languages/Edit.cshtml",
       "TargetPath": "Views\\Project_Languages\\Edit.cshtml",
       "FileKind": "mvc"
@@ -15794,11 +15784,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/dohunkim/Azure/Do4/Views/Projects_Languages/Index.cshtml",
-      "TargetPath": "Views\\Projects_Languages\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/dohunkim/Azure/Do4/Views/Languages/Create.cshtml",
       "TargetPath": "Views\\Languages\\Create.cshtml",
       "FileKind": "mvc"
@@ -15834,11 +15819,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/dohunkim/Azure/Do4/Views/Projects_Languages/Edit.cshtml",
-      "TargetPath": "Views\\Projects_Languages\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/dohunkim/Azure/Do4/Views/Project_Languages/Details.cshtml",
       "TargetPath": "Views\\Project_Languages\\Details.cshtml",
       "FileKind": "mvc"
@@ -15851,11 +15831,6 @@
     {
       "FilePath": "/Users/dohunkim/Azure/Do4/Views/Projects/Index.cshtml",
       "TargetPath": "Views\\Projects\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/dohunkim/Azure/Do4/Views/Projects_Languages/Create.cshtml",
-      "TargetPath": "Views\\Projects_Languages\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
