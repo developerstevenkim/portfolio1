@@ -1,0 +1,111 @@
+@model IEnumerable<DohunKim.Models.Project>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GithubURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DemoURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_Languages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_Authors)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationType.TypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                </td>
+                <td>
+                    @if (item.GithubURL != null)
+                    {
+                    @* @if (item.GithubURL) <==================!!!!!!!!!!!!required!!!!!!!!!!!!!=====================*@
+                    <a href=@item.GithubURL target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-github" viewBox="0 0 16 16">
+                            <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                    </a>
+                    @* @Html.DisplayFor(modelItem => item.GithubURL) *@
+                    }
+                </td>
+                <td>
+                    @if (item.DemoURL != null)
+                    {
+                    <a href=@item.DemoURL target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-file-earmark-code-fill" viewBox="0 0 16 16">
+                            <path
+                            d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708z" />
+                        </svg>
+                    </a>
+                    }
+                </td>
+                <td>
+                    @* @Html.DisplayFor(modelItem => item.Project_Languages[1]) *@
+                    @* https://stackoverflow.com/questions/23000679/mvc-html-displayfor-for-lists-of-derived-models *@
+                    @for (var i = 0; i < item.Project_Languages.Count; i++)
+                    {
+                        @Html.DisplayFor(modelItem=>item.Project_Languages[i].LanguageName, "MyTemplate")
+                        @Html.Raw("<br>")
+                    }
+                </td>
+                <td>
+                    @for (var i = 0; i < item.Project_Authors.Count; i++)
+                    {
+                        @Html.DisplayFor(modelItem=>item.Project_Authors[i].AuthorName, "MyTemplate")
+                        @Html.Raw("<br>")
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProjectName">Edit</a> |
+                    @* @if (User.Identity.IsAuthenticated)
+                    { *@
+                    <a asp-action="Details" asp-route-id="@item.ProjectName">Details</a> |
+                    @* } *@
+                    <a asp-action="Delete" asp-route-id="@item.ProjectName">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
