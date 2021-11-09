@@ -2,13 +2,22 @@
 
 @media only screen and (max-width: 575px) {
     img.imgmaxwidth {
-        max-width: 30rem;
+        max-width: 20rem;
+    }
+
+    img.hobbyIMG {
+        max-width: 100%;
     }
 }
 
 @media only screen and (min-width: 576px) {
     img.imgmaxwidth {
         max-width: 100%;
+    }
+
+    img.hobbyIMG {
+        max-height: 600px;
+        max-width: 450px;
     }
 }
 
@@ -24,15 +33,6 @@ img.img200 {
 img.projectIMG {
     max-height: 400px;
     max-width: 300px;
-    /* display: block;
-    margin: auto; */
-}
-
-img.hobbyIMG {
-    max-height: 600px;
-    max-width: 450px;
-    /* display: block;
-    margin: auto; */
 }
 
 img.radius {
@@ -56,7 +56,7 @@ div.containerItems {
 }
 
 .BCIT {
-    display:inline-block;
+    display: inline-block;
     margin: auto;
     color: white;
     background-color: darkblue;
