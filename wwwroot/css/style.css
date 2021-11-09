@@ -28,6 +28,17 @@ img.projectIMG {
     margin: auto; */
 }
 
+img.hobbyIMG {
+    max-height: 600px;
+    max-width: 450px;
+    /* display: block;
+    margin: auto; */
+}
+
+img.radius {
+    border-radius: 15px;
+}
+
 div.project {
     margin-bottom: 50px;
 }

@@ -3,13 +3,67 @@
 }
 
 <div class="text-center">
-    <h2 class="display-2">Welcome</h2>
     <div class="container">
-        <h3>👋Hello👋</h3>
-        <br>
-        <p>My name is Dohun Kim.</p>
-        <p>What I'm good at it?</p>
-        <p>I currently am looking for a job.</p>
-        
+        @* self introduction section *@
+        <div class="selfIntro extraTopMargin">
+            <h1>👋Hello👋</h1>
+            <br>
+            <p>My name is Dohun Kim, currently looking for a job.</p>
+            <p>This portfolio web application is built by myself during my last term at BCIT.</p>
+            <p>This page introduce who I am. If you are interested in projects I have done, please feel free to check it
+                out on <a href="../Projects">PROJECT</a> tab!</p>
+        </div>
+
+        <br><br>
+        <h1>Here is what I like</h1>
+
+        @* Hobbies? *@
+        <div class="row justify-content-md-center project">
+            <div class="col-md-auto align-self-center minWidth">
+                <img class="hobbyIMG radius" src="~/images/Photography.JPG">
+            </div>
+            <div class="col align-self-center">
+                <h2 class="extraTopMargin">Photography</h2>
+                <p>I love photography.</p>
+                <p>It gives me rich of idea and great memories.</p>
+                <p>The time will be forgotten but the photos will remain.</p>
+                <!-- Large modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                    data-target=".bd-example-modal-lg">Albums</button>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center project">
+            <div class="col-md-auto align-self-center minWidth">
+                <img class="hobbyIMG radius" src="~/images/SushiMania.JPG">
+            </div>
+            <div class="col align-self-center">
+                <h2 class="extraTopMargin">Cook</h2>
+                <p>I have been working in the food industry.</p>
+                <p>I am glad that I can make dishes for our family and our customer at work.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center project">
+            <div class="col-md-auto align-self-center minWidth">
+                <img class="hobbyIMG radius" src="~/images/Travel_Banff_Railway.jpg">
+            </div>
+            <div class="col align-self-center">
+                <h2 class="extraTopMargin">Travel</h2>
+                <p>I like to travel. Who does not?</p>
+                <p> It explains why I am here in Vancouver all the way from South Korea.</p>
+                <p>I am still travelling Vancouver.</p>
+            </div>
+        </div>
+
+        @* modal albums *@
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <img src="~/images/Travel_Banff_Downtown.JPG">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
