@@ -19,6 +19,10 @@
         max-height: 600px;
         max-width: 450px;
     }
+
+    .projectIndex {
+        display: none;
+    }
 }
 
 img.img200 {
