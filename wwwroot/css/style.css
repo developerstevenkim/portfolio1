@@ -21,6 +21,29 @@ img.img200 {
     margin-bottom: 20px;
 }
 
+img.projectIMG {
+    max-height: 400px;
+    max-width: 300px;
+    /* display: block;
+    margin: auto; */
+}
+
+div.project {
+    margin-bottom: 50px;
+}
+
+div.minWidth {
+    min-width: 300px;
+}
+
+.extraTopMargin {
+    margin-top: 15px;
+}
+
+div.containerItems {
+    margin-bottom: 100px;
+}
+
 a:link {
     text-decoration: none;
 }
