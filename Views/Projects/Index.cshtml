@@ -7,7 +7,10 @@
 <h5 class="projectIndex">This website is optimized for desktop view</h5>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-action="Create">Create New</a>
+    }
 </p>
 <table class="table table-hover table-responsive table-100">
     <thead>
@@ -18,12 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ApplicationType)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.ProjectDesc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseDate)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.GithubURL)
             </th>
@@ -33,8 +33,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Project_Languages)
             </th>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.Project_Authors)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
             </th>
             <th></th>
         </tr>
@@ -49,12 +52,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.ApplicationType.TypeName)
                 </td>
-                <td>
+                @* <td>
                     @Html.DisplayFor(modelItem => item.ProjectDesc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                </td>
+                </td> *@
                 <td>
                     @if (item.GithubURL != null)
                     {
@@ -90,13 +90,18 @@
                         @Html.Raw("<br>")
                     }
                 </td>
-                <td>
+                @* <td>
                     @for (var i = 0; i < item.Project_Authors.Count; i++)
                     {
                         @Html.DisplayFor(modelItem=>item.Project_Authors[i].AuthorName, "MyTemplate")
                         @Html.Raw("<br>")
                     }
+                </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
                 </td>
+                @if (User.Identity.IsAuthenticated)
+                {
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ProjectName">Edit</a> |
                     @* @if (User.Identity.IsAuthenticated)
@@ -105,6 +110,7 @@
                     @* } *@
                     <a asp-action="Delete" asp-route-id="@item.ProjectName">Delete</a>
                 </td>
+                }
             </tr>
         }
     </tbody>
