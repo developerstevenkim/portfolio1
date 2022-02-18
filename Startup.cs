@@ -30,11 +30,11 @@ namespace DohunKim
             services.AddControllers().AddNewtonsoftJson(options =>
             options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-            // services.AddDbContext<ApplicationDbContext>(options =>
-            //     options.UseSqlite(
-            //         Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ApplicationDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+                options.UseSqlite(
+                    Configuration.GetConnectionString("DefaultConnection")));
+        //     services.AddDbContext<ApplicationDbContext>(options =>
+        // options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
