@@ -28,7 +28,8 @@ namespace DohunKim.Controllers
             var applicationDbContext = _context.Projects
                 .Include(p => p.ApplicationType)
                 .Include(p => p.Project_Languages)
-                .Include(p => p.Project_Authors);
+                .Include(p => p.Project_Authors)
+                .OrderBy(p => p.ReleaseDate);
             return View(await applicationDbContext.ToListAsync());
         }
 
